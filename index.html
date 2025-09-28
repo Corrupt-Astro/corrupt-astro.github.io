@@ -3,45 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Levi's Corner</title>
+    <title>Origin | The Coder</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind for custom colors and use Inter font -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'origin-dark': '#1e293b', // Slate 800 dark base
+                        'origin-accent': '#facc15', // Amber 400 for highlights
+                        'origin-card': '#334155', // Slate 700 for cards
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Inter Font Link -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <style>
+        /* Base styles for the dark theme */
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 2em;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2 {
-            color: #555;
-            text-align: center;
-        }
-        p {
-            text-align: justify;
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
         }
     </style>
 </head>
-<body>
+<body class="text-white min-h-screen p-4 md:p-8">
 
-    <div class="container">
-        <h1>Welcome!</h1>
-        <p>Hello, my name is Levi, and welcome to my little corner of the internet. I'm excited to share some of my projects and thoughts with you.</p>
+    <!-- Main Content Container -->
+    <div class="max-w-6xl mx-auto space-y-12">
 
-        ---
+        <!-- Header / Hero Section -->
+        <header class="text-center py-10 bg-origin-dark rounded-xl shadow-2xl">
+            <h1 class="text-6xl md:text-8xl font-extrabold tracking-tight">Origin</h1>
+            <p class="text-xl md:text-2xl mt-3 text-origin-accent">The Coder. The Architect. The Saboteur of Good Taste.</p>
+        </header>
 
-        <h2>About Me</h2>
-        <p>I'm a passionate and creative individual with a keen interest in programming. I love tackling new challenges and building things from scratch. Outside of coding, you might find me exploring the outdoors or diving into a good book.</p>
-        
-        <p>I specialize in **Lua coding**, a lightweight, fast, and powerful scripting language. I enjoy using it for everything from game development to creating custom tools and applications. Its simplicity and flexibility make it a great language for bringing ideas to life.</p>
+        <!-- About Section -->
+        <section class="bg-origin-card p-6 md:p-10 rounded-xl shadow-xl">
+            <h2 class="text-3xl font-bold mb-4 border-b border-origin-accent/50 pb-2">About Origin</h2>
+            <p class="text-lg leading-relaxed text-gray-300">
+                Origin is a developer focused on exploring the boundaries of web creation, from elegant, production-ready applications to, well, *less* conventional projects. I believe understanding bad design is just as crucial as mastering good design. This is a portfolio dedicated to both the triumphs and the hilarious failures that happen along the way.
+            </p>
+        </section>
+
+        <!-- Horrible Designs Section -->
+        <section class="bg-red-900/40 p-6 md:p-10 rounded-xl shadow-2xl border-4 border-red-700">
+            <h2 class="text-4xl font-bold text-center mb-8 text-red-300">
+                <span class="border-b-4 border-red-500 pb-1">The Horrible Designs Lab</span>
+            </h2>
+            
+            <p class="text-center text-lg mb-8 text-red-200">
+                Witness the anti-portfolio. These projects were created as satirical experiments in questionable UI/UX choices, performance nightmares, and overall digital chaos. Click through at your own risk.
+            </p>
+
+            <!-- Buttons Grid -->
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+
+                <!-- Horrible Health Care Button -->
+                <a href="https://corrupt-astro.github.io/HHC/" target="_blank"
+                   class="flex flex-col items-center justify-center p-6 bg-origin-dark hover:bg-origin-dark/70 rounded-xl shadow-lg transition duration-300 transform hover:scale-[1.03] border-2 border-red-500">
+                    <span class="text-4xl mb-2" role="img" aria-label="Syringe Icon">💉</span>
+                    <span class="text-xl font-semibold text-origin-accent">Horrible Health Care</span>
+                    <span class="text-sm text-gray-400 mt-1 text-center">A masterclass in confusing forms and questionable color palettes.</span>
+                </a>
+
+                <!-- NetFrame Button -->
+                <a href="https://corrupt-astro.github.io/NetFrame/" target="_blank"
+                   class="flex flex-col items-center justify-center p-6 bg-origin-dark hover:bg-origin-dark/70 rounded-xl shadow-lg transition duration-300 transform hover:scale-[1.03] border-2 border-red-500">
+                    <span class="text-4xl mb-2" role="img" aria-label="Broken Computer Icon">💻</span>
+                    <span class="text-xl font-semibold text-origin-accent">NetFrame</span>
+                    <span class="text-sm text-gray-400 mt-1 text-center">A universal **Warframe** website featuring terrible load times and even worse design choices.</span>
+                </a>
+
+                <!-- The Fancy Failure Bistro Button -->
+                <a href="https://corrupt-astro.github.io/TFFB/" target="_blank"
+                   class="flex flex-col items-center justify-center p-6 bg-origin-dark hover:bg-origin-dark/70 rounded-xl shadow-lg transition duration-300 transform hover:scale-[1.03] border-2 border-red-500">
+                    <span class="text-4xl mb-2" role="img" aria-label="Chef Hat Icon">👨‍🍳</span>
+                    <span class="text-xl font-semibold text-origin-accent">The Fancy Failure Bistro</span>
+                    <span class="text-sm text-gray-400 mt-1 text-center">The menu is illegible, the service is slow, the design is a disaster.</span>
+                </a>
+
+            </div>
+        </section>
+
     </div>
+
+    <!-- Footer -->
+    <footer class="mt-12 text-center text-gray-500 text-sm">
+        &copy; 2025 Origin. All rights reserved. (Or, nothing is right, depending on the section.)
+    </footer>
 
 </body>
 </html>
